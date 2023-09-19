@@ -1,15 +1,31 @@
 import React, { useState } from 'react'
 import '../styles/signIn.css'
 import { Link } from 'react-router-dom'
+import { auth } from "../config/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function SignIn() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const submit = () =>{
-    
-  }
+   const signIn = async (email, password) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            setUserInfo(userCredential.user);
+            navigate('/dashboard')
+        } catch (err) {
+            alert(err);
+        }
+    };
+    const submit = async () => {
+        try{
+            await signIn(email, password);
+        }
+        catch(err){
+            alert(err)
+        }
+    }
 
   return (
     <section>

@@ -1,0 +1,25 @@
+.details{
+    justify-content: flex-start;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+.form-field1, .form-field, .form-field2{
+    width: 100%;
+}
+.form-field1 input,
+.form-field input{
+    width: 480px;
+}
+input{
+    height: 61px;
+    border-radius: 4px;
+    border: 1px solid #8E90A0;
+}
+input:focus{
+    outline: none;
+}

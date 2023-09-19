@@ -1,0 +1,46 @@
+.details{
+    width: 70%;
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+.details div{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.details p{
+    font-size: 20px;
+    font-weight: 700;
+}
+.details h5{
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 400;
+}
+.warning{
+    background-color: #F2C8BD;
+    border-left: 8px solid #E07A5F;
+    border-radius: 8px;
+    padding: 10px 10px 20px;
+}
+.warning p{
+    color: #E07A5F;
+}
+button{
+    width: 70%;
+    height: 61px;
+    border-radius: 16px;
+    margin: 10px auto;
+    border: 2px solid #81B29A;
+}
+.del{
+    background-color: #81B29A;
+    color: #fff;
+}
+.cancel{
+    background-color: #fff;
+    color: #81B29A;
+}

@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import '../styles/signUp.css'
 import { Link } from 'react-router-dom'
+import { auth } from '../config/firebase';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 export default function SignUp() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [inputState, setInputState] = useState([true, true, true]);
 
   const validateEmail = (email) => {
     const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
@@ -28,35 +29,35 @@ export default function SignUp() {
     );
   };
 
-  // const signUp = async (email, password) => {
-  //   try {
-  //     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  //     userCredential.user.auth.displayName = `${firstName.trim()} ${lastName.trim()}`
-  //     userCredential.user.metadata.phoneNumber = phoneNumber.trim()
-  //     console.log(userCredential.user);
-  //     navigate('/signin');
-  //   } catch (err) {
-  //     alert(err);
-  //   }
-  // };
+  const signUp = async (email, password) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      userCredential.user.auth.displayName = `${firstName.trim()} ${lastName.trim()}`
+      userCredential.user.metadata.phoneNumber = phoneNumber.trim()
+      console.log(userCredential.user);
+      navigate('/signin');
+    } catch (err) {
+      alert(err);
+    }
+  };
 
-  // const submit = async () => {
-  //   setInputState([
-  //     validateEmail(email),
-  //     validatePassword(password, confirmPass),
-  //     true,
-  //   ]);
+  const submit = async () => {
+    setInputState([
+      validateEmail(email),
+      validatePassword(password, confirmPass),
+      true,
+    ]);
 
-  //   if (isFormValid()) {
-  //     try {
-  //       await signUp(email.trim(), password.trim());
-  //     } catch (err) {
-  //       alert(err);
-  //     }
-  //   } else {
-  //     alert('Check your details again');
-  //   }
-  // };
+    if (isFormValid()) {
+      try {
+        await signUp(email.trim(), password.trim());
+      } catch (err) {
+        alert(err);
+      }
+    } else {
+      alert('Check your details again');
+    }
+  };
 
   return (
     <section>
@@ -92,7 +93,7 @@ export default function SignUp() {
         <div class="form-group col-1-2">
             <div class="form-field">
                 <span class="form-field-container">
-                    <button className='next-button' type='submit'>Sign in</button>
+                    <button className='next-button' type='submit' onClick={submit}>Sign in</button>
                 </span>
             </div>
         </div>
