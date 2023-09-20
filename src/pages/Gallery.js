@@ -13,9 +13,14 @@ import img10 from '../assests/img10.jpg'
 
 export default function Gallery() {
     const [gallery, setGallery] = useState([
-        {id: 1, src:img1}, {id: 2, src:img2}, {id: 3, src:img3}, {id: 4, src:img4}, {id: 5, src:img5},
-        {id: 6, src:img6}, {id: 7, src:img7}, {id: 8, src:img8}, {id: 9, src:img9}, {id: 10, src:img10}])
+        {id: 1, src:img1, tag: 'nature'}, {id: 2, src:img2, tag: 'nature'},
+        {id: 3, src:img3, tag: 'nature'}, {id: 4, src:img4, tag: 'nature'},
+        {id: 5, src:img5, tag: 'nature'}, {id: 6, src:img6, tag: 'nature'},
+        {id: 7, src:img7, tag: 'nature'}, {id: 8, src:img8, tag: 'nature'}, 
+        {id: 9, src:img9, tag: 'nature'}, {id: 10, src:img10, tag: 'nature'}])
 
+    const [searchItem, setSearchItem] = useState('')
+    
 
     const dragStart = (e) =>{
         e.dataTransfer.setData('text/plain', e.target.id.toString())
@@ -40,22 +45,41 @@ export default function Gallery() {
             setGallery(update)
         }
     }
-    console.log(gallery)
+
+    const filteredGallery = gallery.filter((element) =>
+        searchItem !== '' && element.tag.includes(searchItem)
+    );
   return (
     <section className='gallery'>
-        {gallery.map((item) => (
-            <div>
-                <img src={item.src} alt={item.alt} 
-                    key={item.id}
-                    id={item.id.toString()}
-                    className="grid-item"
-                    draggable="true"
-                    onDragStart={dragStart}
-                    onDragOver={onDrag}
-                    onDrop={onDrop}
-                />
-            </div>
-        ))}
+        <input type='text' onChange={(e) => setSearchItem(e.target.value)}/>
+        {searchItem !== '' ?
+            filteredGallery.map((item) => (
+                <div>
+                    <img src={item.src} alt={item.alt} 
+                        key={item.id}
+                        id={item.id.toString()}
+                        className="grid-item"
+                        draggable="true"
+                        onDragStart={dragStart}
+                        onDragOver={onDrag}
+                        onDrop={onDrop}
+                    />
+                </div>
+            )) :
+            gallery.map((item) => (
+                <div>
+                    <img src={item.src} alt={item.alt} 
+                        key={item.id}
+                        id={item.id.toString()}
+                        className="grid-item"
+                        draggable="true"
+                        onDragStart={dragStart}
+                        onDragOver={onDrag}
+                        onDrop={onDrop}
+                    />
+                </div>
+            ))
+        }
     </section>
   )
 }

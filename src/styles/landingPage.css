@@ -1,0 +1,27 @@
+.landPg{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100dvh;
+}
+
+.main button{
+    width: 100px;
+    height: 60px;
+    outline: none;
+    color: #fff;
+}
+.main button:hover{
+    opacity: .9;
+}
+.main{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin: auto;
+}
+.landPg p{
+    margin: auto;
+}
