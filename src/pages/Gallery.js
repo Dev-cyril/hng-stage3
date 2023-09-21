@@ -10,6 +10,19 @@ import img7 from "../assests/img7.jpg";
 import img8 from "../assests/img8.jpg";
 import img9 from "../assests/img9.jpg";
 import img10 from "../assests/img10.jpg";
+import img11 from "../assests/img11.jpg";
+import img12 from "../assests/img12.jpg";
+import img13 from "../assests/img13.jpg";
+import img14 from "../assests/img14.jpg";
+import img15 from "../assests/img15.jpg";
+import img16 from "../assests/img16.jpg";
+import img17 from "../assests/img17.jpg";
+import img18 from "../assests/img18.jpg";
+import img19 from "../assests/img19.jpg";
+import img20 from "../assests/img20.jpg";
+import img21 from "../assests/img21.jpg";
+import img22 from "../assests/img22.jpg";
+import img23 from "../assests/img23.jpg";
 import Loading from "./LoadingState";
 
 export default function Gallery() {
@@ -24,7 +37,20 @@ export default function Gallery() {
     { id: 8, src: img8, tag: "nature" },
     { id: 9, src: img9, tag: "nature" },
     { id: 10, src: img10, tag: "nature" },
-  ]);
+    { id: 11, src: img11, tag: "renaissance-art" },
+    { id: 12, src: img12, tag: "renaissance-art" },
+    { id: 13, src: img13, tag: "renaissance-art" },
+    { id: 14, src: img14, tag: "modern-art" },
+    { id: 15, src: img15, tag: "modern-art" },
+    { id: 16, src: img16, tag: "modern-art" },
+    { id: 17, src: img17, tag: "modern-art" },
+    { id: 18, src: img18, tag: "modern-art" },
+    { id: 19, src: img19, tag: "modern-art" },
+    { id: 20, src: img20, tag: "modern-art" },
+    { id: 21, src: img21, tag: "modern-art" },
+    { id: 22, src: img22, tag: "modern-art" },
+    { id: 23, src: img23, tag: "modern-art" },
+  ])
 
   const [searchItem, setSearchItem] = useState("");
   const [isLoading, setIsLoading] = useState(true); // Track loading state
