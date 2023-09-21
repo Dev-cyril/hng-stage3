@@ -1,8 +1,7 @@
 import React, { createContext, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import Gallery from './pages/Gallery';
-import PrivateRoutes from './pages/PrivateRoute';
 
 export const Context = createContext();
 
