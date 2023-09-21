@@ -14,10 +14,10 @@ export default function App() {
     <Context.Provider value={{ auth, isLoading, setAuth, setIsLoading }}>
       <Router>
         <Routes>
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/" element={<SignIn />} />
           {
             auth.token ?
-            <Route path='/gallery/:uid' element={<Gallery />} /> :
+            <Route path='/gallery' element={<Gallery />} /> :
             null
           }
         </Routes>

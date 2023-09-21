@@ -20,7 +20,7 @@ export default function SignIn() {
             setUserInfo(userCredential.user.uid);
             setAuth({token: true})
             setIsLoading(true)
-            navigate(`/gallery/${userInfo}`)
+            navigate(`/gallery`)
         } catch (err) {
             alert(err);
         }
@@ -33,6 +33,7 @@ export default function SignIn() {
             alert(err)
         }
     }
+    console.log(userInfo)
 
 
   return (
