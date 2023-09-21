@@ -18,7 +18,7 @@ export default function App() {
           {
             auth.token ?
             <Route path='/gallery' element={<Gallery />} /> :
-            <Route path="/" element={<SignIn />} />
+            <Route path="*" element={<Navigate to="/" />} />
           }
         </Routes>
       </Router>
