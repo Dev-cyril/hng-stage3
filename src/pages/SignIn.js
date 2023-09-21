@@ -14,17 +14,13 @@ export default function SignIn() {
   const navigate = useNavigate()
   const {setAuth, setIsLoading, isLoading} = useContext(Context)
 
-  useEffect( ()=> {
-    console.log(userInfo)
-  }, [userInfo])
-
    const signIn = async (email, password) => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             setUserInfo(userCredential.user.uid);
             setAuth({token: true})
             setIsLoading(true)
-            navigate('/gallery')
+            navigate(`/gallery/${userInfo}`)
         } catch (err) {
             alert(err);
         }
@@ -35,12 +31,6 @@ export default function SignIn() {
         }
         catch(err){
             alert(err)
-        }
-        finally{
-            setIsLoading(false)
-        }
-        while(isLoading){
-            return <Loading/>
         }
     }
 
@@ -75,7 +65,6 @@ export default function SignIn() {
                     </span>
                 </div>
             </div>
-            <n3>Do not have an account? <Link to='/signup'>Sign Up</Link></n3>
         </div>
     </section>
   )
