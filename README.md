@@ -1,18 +1,50 @@
-# Getting Started with Create React App
+# HNG INTERNSHIP- Image Gllery Challenge Solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the HNG internship stage 3 task.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+### The challenge
 
-### `npm start`
+Objective: You will implement a fully functional and responsive image gallery that showcases a collection of images in a visually appealing way.
+A user should be able to . Authenticated users should be able to use the Drag-and-Drop feature, they should be able to select and drag images, effortlessly rearranging them within the gallery.
 
-Runs the app in the development mode.\
+Users should be able to:
+
+- Login to the gallery page
+- Authenticated users should be able to use the Drag-and-Drop feature
+- View the optimal layout for the site depending on their device's screen size
+- select and drag images, effortlessly rearranging them within the gallery.
+
+
+
+### Links
+
+- Live Site URL: Hosted site [here](https://hng-stage3-seven.vercel.app/)
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+
+## Author
+
+- Linkedin - [Cyril Idu](https://www.linkedin.com/in/cyril-idu-885093185/)
+
+
+## Getting Started
+
+- Start by cloning the repository in your local computer using this command `git clone https://github.com/Dev-cyril/Hng_stage2.git`
+- Navigate to the root directory and run the following scripts
+1. `npm install`: Installs every dependencies needed to run this project locally.
+2. `npm start`: Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Other available scripts
 
 ### `npm test`
 
